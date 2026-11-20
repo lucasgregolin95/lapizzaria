@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#111111">
+  <meta name="description" content="Cardápio digital da Pizzaria La Famiglia Bella Vista. Pizzas e esfihas com pedidos pelo WhatsApp.">
+  <title>La Famiglia Bella Vista | Pizzas &amp; Esfihas</title>
+</head>
+<body style="margin:0;background:#111;">
+<div class="lafamiglia-menu" id="lafamiglia-menu">
+  <style>
+    .lafamiglia-menu{--bg:#111;--panel:#1b1b1b;--panel2:#242424;--gold:#f5c928;--white:#fff;--muted:#c7c7c7;--green:#25d366;--red:#c62828;color:var(--white);background:var(--bg);font-family:Arial,Helvetica,sans-serif;line-height:1.45;max-width:1120px;margin:0 auto;border-radius:18px;overflow:hidden;box-shadow:0 12px 40px #0002}
+    .lafamiglia-menu *{box-sizing:border-box}.lafamiglia-menu button,.lafamiglia-menu input,.lafamiglia-menu textarea,.lafamiglia-menu select{font:inherit}
+    .lf-hero{padding:28px 20px 24px;background:linear-gradient(120deg,#090909eF,#191919d9),url('https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1400&q=85');background-color:#171717;background-size:cover;background-position:center;text-align:center;border-bottom:3px solid var(--gold)}
+    .lf-brand{font-family:Georgia,serif;font-size:clamp(30px,7vw,54px);font-weight:800;letter-spacing:2px;color:var(--gold);line-height:1.05}.lf-subbrand{font-family:Georgia,serif;font-size:17px;letter-spacing:5px;margin-top:5px}.lf-kicker{font-size:11px;letter-spacing:4px;color:#eee;margin-top:8px}.lf-tagline{font-family:Georgia,serif;font-style:italic;font-size:clamp(19px,4vw,27px);margin:17px 0 5px}.lf-hero p{color:#eee;margin:0 0 18px}
+    .lf-btn{border:0;border-radius:999px;padding:12px 18px;font-weight:800;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none}.lf-btn-gold{background:var(--gold);color:#171717}.lf-btn-green{background:var(--green);color:#082b15}.lf-btn-dark{background:#333;color:#fff}.lf-toolbar{position:sticky;top:0;z-index:5;background:#111f;border-bottom:1px solid #ffffff18;padding:12px;backdrop-filter:blur(10px)}
+    .lf-tabs{display:flex;gap:8px;overflow:auto;padding-bottom:10px}.lf-tab{white-space:nowrap;background:#292929;color:#fff;border:1px solid #444;border-radius:999px;padding:9px 16px;font-weight:700;cursor:pointer}.lf-tab.active{background:var(--gold);color:#111;border-color:var(--gold)}
+    .lf-searchrow{display:flex;gap:9px}.lf-search{min-width:0;flex:1;background:#242424;color:#fff;border:1px solid #555;border-radius:12px;padding:12px 14px}.lf-cart-top{white-space:nowrap}
+    .lf-content{padding:20px 14px 30px}.lf-section-title{display:flex;align-items:end;justify-content:space-between;gap:10px;margin:8px 0 15px}.lf-section-title h2{font-family:Georgia,serif;font-size:27px;margin:0;color:var(--gold)}.lf-section-title small{color:var(--muted)}
+    .lf-grid{display:grid;grid-template-columns:1fr;gap:12px}.lf-card{background:var(--panel);border:1px solid #ffffff13;border-radius:15px;padding:14px;min-width:0;display:flex;flex-direction:column;gap:9px}.lf-card h3{font-size:16px;margin:0;color:#fff}.lf-card p{font-size:13px;color:var(--muted);margin:0;min-height:36px}.lf-prices{display:flex;gap:8px;flex-wrap:wrap}.lf-price{font-weight:800;color:var(--gold);font-size:14px}.lf-price small{font-weight:500;color:#ddd}.lf-card-actions{display:flex;gap:7px;align-items:center;margin-top:auto}.lf-card select{flex:1;min-width:0;background:#303030;color:#fff;border:1px solid #555;border-radius:9px;padding:9px 6px;font-size:13px}.lf-add{background:var(--gold);color:#111;border:0;border-radius:9px;padding:10px 12px;font-weight:900;cursor:pointer}.lf-add:active,.lf-btn:active{transform:scale(.98)}
+    .lf-empty{grid-column:1/-1;color:var(--muted);text-align:center;padding:25px}.lf-cart-panel{margin-top:26px;background:#1b1b1b;border:1px solid #ffffff20;border-radius:16px;padding:16px}.lf-cart-panel h2{margin:0 0 12px;color:var(--gold);font-family:Georgia,serif}.lf-cart-line{display:grid;grid-template-columns:1fr auto;gap:8px;padding:10px 0;border-bottom:1px solid #ffffff18}.lf-cart-line strong{display:block}.lf-cart-line small{color:var(--muted)}.lf-qty{display:flex;align-items:center;gap:8px}.lf-qty button{background:#333;color:#fff;border:0;border-radius:7px;width:28px;height:28px;font-weight:bold}.lf-remove{background:transparent!important;color:#ff9b9b!important}.lf-total{display:flex;justify-content:space-between;font-size:19px;font-weight:900;padding:15px 0;color:var(--gold)}
+    .lf-form{display:grid;grid-template-columns:1fr 1fr;gap:10px}.lf-form label{font-size:12px;color:#ddd;display:flex;flex-direction:column;gap:5px}.lf-form input,.lf-form textarea{width:100%;background:#292929;color:#fff;border:1px solid #555;border-radius:9px;padding:11px}.lf-form .wide{grid-column:1/-1}.lf-checkout{width:100%;margin-top:12px;font-size:16px}.lf-note{font-size:12px;color:#aaa;margin:10px 0 0}.lf-contact{padding:20px;text-align:center;background:#090909;border-top:1px solid #ffffff20}.lf-contact strong{color:var(--gold)}.lf-contact a{color:#fff;text-decoration:none}.lf-float{position:fixed;right:14px;bottom:16px;z-index:20;box-shadow:0 5px 20px #0008}
+    @media(min-width:600px){.lf-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(min-width:900px){.lf-content{padding:28px}.lf-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.lf-hero{padding:42px 24px}.lf-card{padding:17px}}
+    @media(max-width:420px){.lf-form{grid-template-columns:1fr}.lf-form .wide{grid-column:auto}.lf-section-title h2{font-size:24px}.lf-cart-top{padding:10px 12px}}
+  </style>
+
+  <header class="lf-hero" id="lf-top">
+    <div class="lf-brand">LA FAMIGLIA</div>
+    <div class="lf-subbrand">Bella Vista</div>
+    <div class="lf-kicker">PIZZAS &amp; ESFIHAS</div>
+    <div class="lf-tagline">O sabor da tradição!</div>
+    <p>Escolha seus sabores favoritos e peça sem sair de casa.</p>
+    <a class="lf-btn lf-btn-gold" href="#lf-menu-list">VER CARDÁPIO ↓</a>
+  </header>
+
+  <div class="lf-toolbar">
+    <nav class="lf-tabs" aria-label="Categorias do cardápio">
+      <button type="button" class="lf-tab active" data-category="pizzas">🍕 Pizzas</button>
+      <button type="button" class="lf-tab" data-category="esfihas">🥟 Esfihas</button>
+      <button type="button" class="lf-tab" data-category="all">Todos</button>
+    </nav>
+    <div class="lf-searchrow">
+      <input class="lf-search" id="lf-search" type="search" placeholder="Buscar sabor ou ingrediente..." aria-label="Buscar no cardápio">
+      <button class="lf-btn lf-btn-gold lf-cart-top" type="button" id="lf-go-cart">🛒 <span id="lf-cart-count">0</span></button>
+    </div>
+  </div>
+
+  <main class="lf-content" id="lf-menu-list">
+    <div class="lf-section-title"><h2 id="lf-heading">Nossas Pizzas</h2><small id="lf-count"></small></div>
+    <div class="lf-grid" id="lf-products" aria-live="polite"></div>
+
+    <section class="lf-cart-panel" id="lf-cart">
+      <h2>Seu pedido</h2>
+      <div id="lf-cart-items"><p class="lf-note">Seu carrinho está vazio. Escolha seus sabores acima.</p></div>
+      <div class="lf-total"><span>Total</span><span id="lf-total">R$ 0,00</span></div>
+      <div class="lf-form">
+        <label>Seu nome<input id="lf-customer" type="text" placeholder="Nome para o pedido" autocomplete="name"></label>
+        <label>Endereço de entrega<input id="lf-address" type="text" placeholder="Rua, número e bairro" autocomplete="street-address"></label>
+        <label class="wide">Observações<textarea id="lf-observations" rows="2" placeholder="Referência, complemento ou instruções (opcional)"></textarea></label>
+      </div>
+      <button type="button" class="lf-btn lf-btn-green lf-checkout" id="lf-checkout">FINALIZAR PELO WHATSAPP</button>
+      <p class="lf-note">O pedido será enviado à pizzaria para confirmação. A entrega, disponibilidade e forma de pagamento serão confirmadas pelo atendimento.</p>
+    </section>
+  </main>
+
+  <footer class="lf-contact">
+    <p><strong>LA FAMIGLIA BELLA VISTA</strong><br>Pizzas &amp; Esfihas</p>
+    <p>Telefone: <a href="tel:+551123821850">(11) 2382-1850</a> · <a href="tel:+551126564512">(11) 2656-4512</a></p>
+    <p>WhatsApp: <a href="https://wa.me/551199859929" target="_blank" rel="noopener">(11) 99859-9929</a></p>
+    <a href="#lf-top" class="lf-btn lf-btn-dark">↑ Voltar ao início</a>
+  </footer>
+  <button type="button" class="lf-btn lf-btn-green lf-float" id="lf-float-cart">🛒 Pedido (<span id="lf-float-count">0</span>)</button>
+</div>
+
+<script>
+(function(){
+  'use strict';
+  const root=document.getElementById('lafamiglia-menu');
+  if(!root || root.dataset.initialized==='1') return;
+  root.dataset.initialized='1';
+
+  const pizzas=[
+    ["Alemã","Muçarela, bacon e cebola",52,42],["Alho","Muçarela e alho frito",48,38],["Atum I","Atum e cebola",48,38],["Atum II","Atum e muçarela",58,48],["Atum III","Atum e catupiry",58,48],
+    ["Bacon I","Muçarela e bacon",52,42],["Bacon II","Catupiry e bacon",52,42],["Bacon III","Provolone e bacon",58,48],["Baiana I","Calabresa moída, pimenta, ovos e cebola",45,35],["Baiana II","Calabresa moída, pimenta e muçarela",52,42],
+    ["Bauru","Presunto, rodelas de tomate e muçarela",48,38],["Boca Loka","Presunto, ervilhas, palmito, ovos, muçarela e bacon",58,48],["Brócolis I","Brócolis, muçarela e bacon",52,42],["Brócolis II","Brócolis, catupiry original e bacon",52,42],["Calabresa I","Calabresa fatiada com cebola",45,35],
+    ["Calabresa II","Calabresa fatiada e muçarela",52,42],["Calabresa III","Calabresa fatiada e catupiry",52,42],["Calabresa Especial","Calabresa fatiada, catupiry, milho e bacon",58,48],["Camarão I","Camarão e muçarela",85,75],["Camarão II","Camarão e catupiry",85,75],
+    ["Ecológica I","Palmito, milho, ervilha, cebola, champignon e muçarela",56,46],["Ecológica II","Palmito, milho, ervilha, cebola, champignon e catupiry",56,46],["Escarola I","Escarola, muçarela e bacon",48,38],["Escarola II","Escarola, catupiry original e bacon",48,38],["Frango I","Frango e muçarela",56,46],
+    ["Frango II","Frango e catupiry original",56,46],["Franbacon I","Frango, muçarela e bacon",58,48],["Franbacon II","Frango, catupiry original e bacon",58,48],["Lombo I","Lombo fatiado e muçarela",52,42],["Lombo II","Lombo fatiado e catupiry",52,42],
+    ["Marguerita","Muçarela, tomate e manjericão fresco",48,38],["Mexicana I","Milho, bacon e muçarela",56,46],["Mexicana II","Milho, bacon e catupiry",56,46],["Milho I","Muçarela e milho",48,38],["Milho II","Catupiry original e milho",48,38],
+    ["Moda do Chefe I","Calabresa, palmito e muçarela",56,46],["Moda do Chefe II","Calabresa, palmito e catupiry original",56,46],["Moda da Casa","Frango, presunto, ovos, cebola, muçarela e bacon",58,48],["Muçarela","Queijo tipo muçarela",45,35],["Napolitana","Muçarela, tomate e parmesão",48,38],
+    ["Palmito I","Palmito e muçarela",52,42],["Palmito II","Palmito e catupiry",52,42],["Pepperone","Muçarela, peperone e parmesão",58,48],["Portuguesa","Presunto, ovos, cebola, ervilha e muçarela",52,42],["Romana","Presunto, ovos e muçarela",48,38],
+    ["Rúcula","Muçarela, rúcula e tomate seco",52,42],["Saborosa I","Frango, milho e muçarela",58,48],["Saborosa II","Frango, milho e catupiry",58,48],["Selva I","Frango, milho, ervilha, palmito e muçarela",58,48],["Selva II","Frango, milho, ervilha, palmito e catupiry original",58,48],
+    ["Siciliana I","Muçarela, champignon e bacon",56,46],["Siciliana II","Catupiry original, champignon e bacon",56,46],["Toscana","Calabresa moída e muçarela",52,42],["2 Queijos","Muçarela e catupiry original",52,42],["3 Queijos","Muçarela, catupiry original e provolone",58,48],
+    ["4 Queijos","Muçarela, catupiry original, provolone e parmesão",62,52],["5 Queijos","Muçarela, catupiry, provolone, parmesão e gorgonzola",68,58]
+  ].map((p,i)=>({id:'p'+i,name:p[0],description:p[1],regular:p[2],broto:p[3],category:'pizzas'}));
+
+  const esfihas=[
+    ["Atum",5],["Atum e muçarela",7],["Atum e catupiry",7],["Bauru",7],["Brócolis, muçarela e bacon",7],["Brócolis, catupiry e bacon",7],["Calabresa",4],["Calabresa fatiada",5],["Calabresa e muçarela",7],["Calabresa e catupiry",7],["Carne",4],["Carne e muçarela",7],["Carne e catupiry",7],["Carne e cheddar",7],["Catupiry",5],["Catupiry e bacon",7],["Catupiry e milho",7],["Catupiry e palmito",7],["Cheddar",5],["Cheddar e milho",7],["Cheddar e bacon",7],["Escarola, muçarela e bacon",7],["Escarola, catupiry e bacon",7],["Frango",5],["Frango e muçarela",7],["Frango e catupiry",7],["Frango e cheddar",7],["Lombo e muçarela",7],["Lombo e catupiry",7],["Muçarela",5],["Muçarela e bacon",7],["Muçarela e milho",7],["Muçarela e palmito",7],["2 Queijos",7],["3 Queijos",8],["4 Queijos",8]
+  ].map((p,i)=>({id:'e'+i,name:p[0],description:'Esfiha '+p[0].toLowerCase(),price:p[1],category:'esfihas'}));
+
+  const products=[...pizzas,...esfihas], cart=[];
+  let category='pizzas';
+  const $=id=>root.querySelector('#'+id);
+  const money=n=>n.toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
+  const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const list=$('lf-products');
+
+  function visibleProducts(){
+    const term=$('lf-search').value.trim().toLocaleLowerCase('pt-BR');
+    return products.filter(p=>(category==='all'||p.category===category)&&(!term||(p.name+' '+p.description).toLocaleLowerCase('pt-BR').includes(term)));
+  }
+  function renderProducts(){
+    const shown=visibleProducts();
+    $('lf-heading').textContent=category==='pizzas'?'Nossas Pizzas':category==='esfihas'?'Nossas Esfihas':'Nosso Cardápio';
+    $('lf-count').textContent=shown.length+' opções';
+    list.innerHTML=shown.length?shown.map(p=>{
+      const isPizza=p.category==='pizzas';
+      return `<article class="lf-card"><h3>${esc(p.name)}</h3><p>${esc(p.description)}</p>
+      <div class="lf-prices">${isPizza?`<span class="lf-price">${money(p.regular)} <small>Tradicional</small></span><span class="lf-price">${money(p.broto)} <small>Broto</small></span>`:`<span class="lf-price">${money(p.price)}</span>`}</div>
+      <div class="lf-card-actions">${isPizza?`<select aria-label="Tamanho de ${esc(p.name)}" data-size="${p.id}"><option value="regular">Tradicional</option><option value="broto">Broto</option></select>`:''}<button class="lf-add" type="button" data-add="${p.id}">+ Adicionar</button></div></article>`;
+    }).join(''):'<div class="lf-empty">Nenhum sabor encontrado. Tente outra pesquisa.</div>';
+  }
+  function renderCart(){
+    const count=cart.reduce((s,x)=>s+x.qty,0),total=cart.reduce((s,x)=>s+x.price*x.qty,0);
+    $('lf-cart-count').textContent=count;$('lf-float-count').textContent=count;$('lf-total').textContent=money(total);
+    $('lf-cart-items').innerHTML=cart.length?cart.map((x,i)=>`<div class="lf-cart-line"><div><strong>${esc(x.name)}</strong><small>${x.qty} × ${money(x.price)} · ${money(x.qty*x.price)}</small>${x.note?`<small>Obs.: ${esc(x.note)}</small>`:''}</div><div class="lf-qty"><button type="button" data-dec="${i}" aria-label="Diminuir">−</button><b>${x.qty}</b><button type="button" data-inc="${i}" aria-label="Aumentar">+</button><button type="button" class="lf-remove" data-del="${i}" aria-label="Remover">×</button></div></div>`).join(''):'<p class="lf-note">Seu carrinho está vazio. Escolha seus sabores acima.</p>';
+  }
+  list.addEventListener('click',e=>{
+    const btn=e.target.closest('[data-add]');if(!btn)return;
+    const p=products.find(x=>x.id===btn.dataset.add);if(!p)return;
+    const sizeEl=root.querySelector(`[data-size="${p.id}"]`),size=sizeEl?sizeEl.value:'single';
+    const price=p.category==='pizzas'?(size==='broto'?p.broto:p.regular):p.price;
+    const sizeName=p.category==='pizzas'?(size==='broto'?'Broto':'Tradicional'):'Unidade';
+    const key=p.id+'-'+size;const existing=cart.find(x=>x.key===key);
+    if(existing)existing.qty++;else cart.push({key,name:p.name+' ('+sizeName+')',price,qty:1});
+    renderCart();btn.textContent='✓ Adicionado';setTimeout(()=>{btn.textContent='+ Adicionar'},900);
+  });
+  $('lf-cart-items').addEventListener('click',e=>{
+    const b=e.target.closest('button');if(!b)return;
+    const i=Number(b.dataset.inc??b.dataset.dec??b.dataset.del);if(!Number.isInteger(i)||!cart[i])return;
+    if(b.hasAttribute('data-inc'))cart[i].qty++;
+    else if(b.hasAttribute('data-dec')){cart[i].qty--;if(cart[i].qty<=0)cart.splice(i,1);}
+    else cart.splice(i,1);
+    renderCart();
+  });
+  root.querySelectorAll('[data-category]').forEach(btn=>btn.addEventListener('click',()=>{
+    category=btn.dataset.category;root.querySelectorAll('[data-category]').forEach(x=>x.classList.toggle('active',x===btn));renderProducts();
+  }));
+  $('lf-search').addEventListener('input',renderProducts);
+  function goCart(){ $('lf-cart').scrollIntoView({behavior:'smooth',block:'start'}); }
+  $('lf-go-cart').addEventListener('click',goCart);$('lf-float-cart').addEventListener('click',goCart);
+  $('lf-checkout').addEventListener('click',()=>{
+    if(!cart.length){alert('Adicione pelo menos um produto ao pedido.');return;}
+    const name=$('lf-customer').value.trim(),address=$('lf-address').value.trim(),obs=$('lf-observations').value.trim();
+    if(!name||!address){alert('Informe seu nome e endereço de entrega.');return;}
+    const total=cart.reduce((s,x)=>s+x.price*x.qty,0);
+    let msg='🍕 *PEDIDO — LA FAMIGLIA BELLA VISTA*%0A%0A';
+    msg+='*Cliente:* '+encodeURIComponent(name)+'%0A*Endereço:* '+encodeURIComponent(address)+'%0A%0A*ITENS DO PEDIDO*%0A';
+    cart.forEach(x=>{msg+='• '+encodeURIComponent(x.qty+'x '+x.name+' — '+money(x.price*x.qty))+'%0A';});
+    msg+='%0A*TOTAL: '+encodeURIComponent(money(total))+'*';
+    if(obs)msg+='%0A%0A*Observações:* '+encodeURIComponent(obs);
+    msg+='%0A%0A_Aguardo confirmação do pedido, prazo e forma de pagamento._';
+    window.open('https://wa.me/551199859929?text='+msg,'_blank','noopener');
+  });
+  renderProducts();renderCart();
+})();
+</script>
+</body>
+</html>
